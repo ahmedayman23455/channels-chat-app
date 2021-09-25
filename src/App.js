@@ -1,58 +1,75 @@
 import React from 'react';
-import logo from './logo.svg';
-import { Counter } from './features/counter/Counter';
+import { ThemeProvider } from 'styled-components';
+import { GlobalStyles, lightTheme, darkTheme } from './globalStyles';
 import './App.css';
+import useDarkmode from './darkTheme/useDarkmode';
+import styled from 'styled-components';
+import ChatMenu from './components/menu/ChatMenu';
+import Header from './components/header/Header';
+import Main from './components/main/Main';
+import { BrowserRouter as Router } from 'react-router-dom';
+import { auth } from './firebase/firebase';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import Login from './components/login/Login';
+import { Route } from 'react-router-dom';
+import { useState } from 'react';
+import AppLoading from './components/app-loading/AppLoading';
 
 function App() {
+  const [darkMode, toggleDarkmode] = useDarkmode();
+  const [showChannels, setShowChannels] = useState(false);
+
+  const [user, loading] = useAuthState(auth);
+
+  const toggleShowChannels = () => {
+    setShowChannels((prevState) => !prevState);
+  };
+
+  const activeTheme = darkMode ? darkTheme : lightTheme;
+
+  if (loading) {
+    return (
+      <ThemeProvider theme={activeTheme}>
+        <AppLoading />
+      </ThemeProvider>
+    );
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <Counter />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <span>
-          <span>Learn </span>
-          <a
-            className="App-link"
-            href="https://reactjs.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux-toolkit.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux Toolkit
-          </a>
-          ,<span> and </span>
-          <a
-            className="App-link"
-            href="https://react-redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React Redux
-          </a>
-        </span>
-      </header>
-    </div>
+    <Router>
+      <ThemeProvider theme={activeTheme}>
+        <Route path="/">
+          {!user ? (
+            <Login />
+          ) : (
+            <Container>
+              <ChatMenu />
+              <AppBody>
+                <Header
+                  toggleDarkmode={toggleDarkmode}
+                  toggleShowChannels={toggleShowChannels}
+                />
+
+                <Main showChannels={showChannels} />
+              </AppBody>
+            </Container>
+          )}
+          <GlobalStyles />
+        </Route>
+      </ThemeProvider>
+    </Router>
   );
 }
 
 export default App;
+
+const Container = styled.div`
+  display: flex;
+  overflow: hidden;
+`;
+
+const AppBody = styled.div`
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+`;
