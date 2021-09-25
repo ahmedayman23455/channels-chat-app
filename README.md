@@ -1,44 +1,63 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.
+## channels-chat-app is a functional, responsive Website created with React ,Firebase , Firebase Hooks
 
-## Available Scripts
+**Watch the website (live demo): https://channels-chat-app.web.app/**
 
-In the project directory, you can run:
+#### &#9881; STACK.
 
-### `npm start`
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+**( Routing )**
+- Routing with **React Router.**
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
 
-### `npm test`
+**( Firebase & Firestore )**
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Use Firebase to build **full stack application.**
+- **react-firebase-hooks** 
 
-### `npm run build`
+- **Sign-In** workflow with Firebase.
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- **Google** Authentification. 
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+- **Authentication State Persistence** 
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- **Storing Channels and messages of users In FireStore.**
 
-### `npm run eject`
+**( Material UI )**   
+- use components of material ui
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+**( Design )**
+- From Dribbble > 
+**https://dribbble.com/shots/15568094/attachments/7352252?mode=media**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+---
+#### Overview & Goal. 
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- **Users can log in by email of google.**
+- **users can create channels and chat together inside them.**
+--- 
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+https://user-images.githubusercontent.com/57132693/134781734-1ec3b40c-85fc-448e-a92e-b78056b869a3.mp4
+
+
+
+
+#### Images. 
+
+
+![screen1](https://user-images.githubusercontent.com/57132693/134782429-459ed2fd-4e53-4ae8-ae72-08e1b41501c3.png)
+![Screenshot_2](https://user-images.githubusercontent.com/57132693/134782419-0069e754-d1b5-4571-86d8-43fc45588532.png)
+
+![tablet1](https://user-images.githubusercontent.com/57132693/134782422-a5163ac5-4170-4330-8a26-ead2708a20d6.png)
+![tablet2](https://user-images.githubusercontent.com/57132693/134782423-600267df-71de-4dd2-a899-39cf99193604.png)
+![mobile1](https://user-images.githubusercontent.com/57132693/134782426-cd586fde-9497-407b-aa9d-572dc912300a.png)
+![mobile2](https://user-images.githubusercontent.com/57132693/134782428-597cdfea-3810-46ec-9b37-c81da7bdbb50.png)
+![Screenshot_1](https://user-images.githubusercontent.com/57132693/134782417-3ef439c4-8f93-4eeb-81d0-5af032b869ce.png)
+![Screenshot_8](https://user-images.githubusercontent.com/57132693/134782420-7fb903c5-a76f-4ecd-921a-cbb1ba7a5459.png)
+
+
+
+
+
